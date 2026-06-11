@@ -104,17 +104,17 @@ export default function AddWorkLogDialog({ open, onClose, initialDate, hourlyWag
               <p className="text-xs text-destructive">{errors.work_date.message}</p>
             )}
           </div>
-          <div className="grid grid-cols-2 gap-3">
-            <div className="space-y-1">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-2">
+            <div className="space-y-1 min-w-0">
               <Label htmlFor="start_time">시작 시간</Label>
-              <Input id="start_time" type="time" {...register('start_time')} />
+              <Input id="start_time" type="time" className="w-full text-sm" {...register('start_time')} />
               {errors.start_time && (
                 <p className="text-xs text-destructive">{errors.start_time.message}</p>
               )}
             </div>
-            <div className="space-y-1">
+            <div className="space-y-1 min-w-0">
               <Label htmlFor="end_time">종료 시간</Label>
-              <Input id="end_time" type="time" {...register('end_time')} />
+              <Input id="end_time" type="time" className="w-full text-sm" {...register('end_time')} />
               {errors.end_time && (
                 <p className="text-xs text-destructive">{errors.end_time.message}</p>
               )}

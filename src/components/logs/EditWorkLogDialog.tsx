@@ -96,14 +96,14 @@ export default function EditWorkLogDialog({ log, hourlyWage, open, onClose }: Pr
             <Label>날짜</Label>
             <Input type="date" {...register('work_date')} />
           </div>
-          <div className="grid grid-cols-2 gap-3">
-            <div className="space-y-1">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-2">
+            <div className="space-y-1 min-w-0">
               <Label>시작 시간</Label>
-              <Input type="time" {...register('start_time')} />
+              <Input type="time" className="w-full text-sm" {...register('start_time')} />
             </div>
-            <div className="space-y-1">
+            <div className="space-y-1 min-w-0">
               <Label>종료 시간</Label>
-              <Input type="time" {...register('end_time')} />
+              <Input type="time" className="w-full text-sm" {...register('end_time')} />
               {errors.end_time && (
                 <p className="text-xs text-destructive">{errors.end_time.message}</p>
               )}
