@@ -15,7 +15,6 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogFooter,
 } from '@/components/ui/dialog'
 
 const schema = z
@@ -124,12 +123,12 @@ export default function EditWorkLogDialog({ log, hourlyWage, open, onClose }: Pr
             <Label>메모</Label>
             <Input {...register('memo')} />
           </div>
-          <DialogFooter>
-            <Button type="button" variant="outline" onClick={onClose}>취소</Button>
-            <Button type="submit" disabled={isPending}>
+          <div className="flex gap-2 pt-1">
+            <Button type="button" variant="outline" className="flex-1" onClick={onClose}>취소</Button>
+            <Button type="submit" className="flex-1" disabled={isPending}>
               {isPending ? '저장 중...' : '저장'}
             </Button>
-          </DialogFooter>
+          </div>
         </form>
       </DialogContent>
     </Dialog>
